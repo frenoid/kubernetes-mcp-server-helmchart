@@ -4,7 +4,7 @@ Deploy the [Kubernetes MCP Server](https://github.com/containers/kubernetes-mcp-
 # How to use
 Clone the repo
 ```bash
-git clone https://github.com/containers/kubernetes-mcp-server.git
+git clone git@github.com:frenoid/kubernetes-mcp-server-helmchart.git
 ```
 
 Enter the directory
