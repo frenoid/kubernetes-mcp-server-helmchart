@@ -1,0 +1,16 @@
+#  read-all permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: read-only-all
+  labels:
+    {{- include "kubernetes-mcp-server.labels" . | nindent 4 }}
+rules:
+- apiGroups:
+  - "*" # Represents all API groups
+  resources:
+  - "*" # Represents all resources within those API groups
+  verbs: 
+  - "get"
+  - "list"
+  - "watch"
