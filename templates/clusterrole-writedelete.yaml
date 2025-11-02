@@ -1,0 +1,20 @@
+{{- if .Values.enableWriteDelete -}}
+#  create-update-delete permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: write-delete-all
+  labels:
+    {{- include "kubernetes-mcp-server.labels" . | nindent 4 }}
+rules:
+- apiGroups:
+  - "*" # Represents all API groups
+  resources:
+  - "*" # Represents all resources within those API groups
+  verbs: 
+  - "create"
+  - "update"
+  - "patch"
+  - "delete"
+  - "deletecollection"
+{{- end }}

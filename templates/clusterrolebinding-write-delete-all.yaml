@@ -1,7 +1,8 @@
+{{- if .Values.enableWriteDelete -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: readonly
+  name: write-delete-all
   labels:
     {{- include "kubernetes-mcp-server.labels" . | nindent 4 }}
 subjects:
@@ -10,5 +11,6 @@ subjects:
   namespace: {{ .Release.Namespace  }}
 roleRef:
   kind: ClusterRole
-  name: read-only-all
+  name: write-delete-all
   apiGroup: rbac.authorization.k8s.io
+{{- end }}
