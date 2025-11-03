@@ -32,13 +32,6 @@ The command deletes the release named `myrelease` and frees all the kubernetes r
 
 ## Configuration
 
-### Global parameters
-
-| Name                      | Description                                     | Default |
-| ------------------------- | ----------------------------------------------- | ------- |
-| `global.imageRegistry`    | Global Docker image registry                    | `""`    |
-| `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]`    |
-
 ### Common parameters
 
 | Name                | Description                                                                                         | Default |
