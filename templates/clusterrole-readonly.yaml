@@ -2,7 +2,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: read-only-all
+  name: {{ include "kubernetes-mcp-server.fullname" . }}-read-only
   labels:
     {{- include "kubernetes-mcp-server.labels" . | nindent 4 }}
 rules:
